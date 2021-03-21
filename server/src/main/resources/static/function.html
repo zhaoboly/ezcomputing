@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<h1>commit Function</h1>
+
+	<form action="/hub/function/commit" method="post">
+		<input type="text"  name="name"
+			value="org.ezcomputing.math.multiply"><br> <input
+			type="text" id="fname" name="version" value="0.0.1"><br>
+
+		<textarea name="source" rows="10" cols="100">
+		
+						/*
+				 * org.ezcomputing.math.multiply
+				 * version: 0.0.1
+				 * 
+				 * @author Bo Zhao
+				 * 
+				 * @request example {"input":[1,2,3,4,5]}  
+				 * 			or {"input":[30,4]}  
+				 * 
+				 */
+				
+				
+				
+				function main(json){
+					
+					var array = json.input;
+					var number =1;
+					
+					//for each(var i in array){
+					//	number =number * i;
+					//}
+					for(var i = 0; i < array.length; i++) {
+					    var obj = json[i];
+					    number =number * json[i];
+					}
+					
+					
+					var result = {
+							'output': number;
+					}
+					
+					return JSON.stringify(result);
+				}
+
+		
+		
+    	</textarea>
+		<textarea name="sampleRequest" rows="10" cols="100">
+		{
+			"input":[1,2,3,4,5]
+		} 
+  
+    </textarea>
+		<textarea name="sampleResponse" rows="10" cols="100">
+		{"output": 299}
+    </textarea>
+		<br> <br> <input type="submit"  value="Submit">
+	</form>
+
+
+</body>
+</html>
+
