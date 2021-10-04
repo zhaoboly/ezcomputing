@@ -13,3 +13,7 @@ The javacript codes are running under Jaalvm engine, which is java virtual machi
 
 ### 2. Open source in mind
 We want to encourage more people to donate their PC's computing power. So all javascript codes created in our plateform will be in open source domain.
+
+some good resources used in the project:
+
+[JsonStores.com](https://jsonstores.com)
